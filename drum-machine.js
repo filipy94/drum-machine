@@ -215,6 +215,8 @@ class DrumKeys extends React.Component {
     if (this.props.power) {
       this.audio.play();
       this.audio.currentTime = 0;
+      this.pressedPad();
+      setTimeout(() => this.pressedPad(), 150);
       this.audio.volume = this.props.volume
       this.props.handleDisplay(this.props.drumKey.id);
     };
